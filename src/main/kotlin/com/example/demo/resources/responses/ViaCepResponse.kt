@@ -1,8 +1,13 @@
-package com.example.demo.domain
+package com.example.demo.resources.responses
 
 data class ViaCepResponse(
-    val logradouro: String,
-    val localidade: String,
     val cep: String,
-    val bairro: String
+    val logradouro: String,
+    val complemento: String,
+    val bairro: String,
+    val localidade: String,
+    val uf: String,
+    val ibge: String,
+    val gia: String,
+    val ddd: String
 )

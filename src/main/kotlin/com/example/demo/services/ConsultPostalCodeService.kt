@@ -1,6 +1,6 @@
 package com.example.demo.services
 
-import com.example.demo.domain.PostalCodeRequest
+import com.example.demo.resources.requests.PostalCodeRequest
 import com.example.demo.resources.responses.ViaCepResponse
 import org.springframework.stereotype.Service
 import java.util.logging.Logger

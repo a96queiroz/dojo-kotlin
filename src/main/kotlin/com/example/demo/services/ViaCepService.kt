@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service
 @Service
 class ViaCepService(private val viaCepClient: ViaCepClient) {
 
-    fun getAddress(postalCode: String): ViaCepResponse = viaCepClient.getAddress(postalCode)
-    
+    fun getAddress(postalCode: String): ViaCepResponse {
+        try {
+            return viaCepClient.getAddress(postalCode)
+        } catch (e: Exception) {
+            println(e.message)
+            return ViaCepResponse(postalCode, null, null, null, null, null, null, null, null)
+        }
+    }
 }

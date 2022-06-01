@@ -31,6 +31,8 @@ dependencies {
     implementation("io.github.openfeign:feign-jackson:11.8")
     implementation("io.github.openfeign:feign-okhttp:11.8")
     implementation("commons-codec:commons-codec:1.9")
+    implementation("org.mapstruct:mapstruct:1.5.0.RC1")
+    kapt("org.mapstruct:mapstruct-processor:1.5.0.RC1")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")

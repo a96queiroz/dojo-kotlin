@@ -16,16 +16,16 @@ class AddressPreviewService(
 ) {
 
     fun getAddressRandom(): AddressPreviewResponse {
-        try {
-            return geradornvClient.getAddress()
+        return try {
+            geradornvClient.getAddress()
         } catch (e: Exception) {
             println(e.message)
-            return AddressPreviewResponse();
+            AddressPreviewResponse()
         }
     }
 
-    fun saveEntity(id: UUID?, entity: AddressPreviewEntity): AddressPreviewEntity?{
-        if(entity.id!! == id){
+    fun saveEntity(id: UUID?, entity: AddressPreviewEntity): AddressPreviewEntity? {
+        if (entity.id!! == id) {
             return repository.save(entity)
         }
         return null
@@ -37,10 +37,10 @@ class AddressPreviewService(
     }
 
     fun findById(id: UUID): AddressPreviewEntity {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElse(null)
     }
 
     fun listUnread(): List<AddressPreviewEntity> {
-        return repository.findByRead(false);
+        return repository.findByRead(false)
     }
 }

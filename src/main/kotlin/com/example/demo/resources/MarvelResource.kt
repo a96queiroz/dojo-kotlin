@@ -1,8 +1,10 @@
 package com.example.demo.resources
 
+import com.example.demo.resources.responses.CharactersResponse
 import com.example.demo.services.MarvelService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -10,5 +12,5 @@ import org.springframework.web.bind.annotation.RestController
 class MarvelResource(private val marvelService: MarvelService) {
 
     @GetMapping("/characters")
-    fun findAll(): Any = marvelService.findAll()
+    fun findAll(): CharactersResponse = marvelService.findAll()
 }
